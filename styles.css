@@ -43,6 +43,7 @@
     margin: 10px 0;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin:auto;
   }
   
   .btn:hover {
