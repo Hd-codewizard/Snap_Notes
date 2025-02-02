@@ -1,0 +1,205 @@
+General Reset */
+
+* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+}
+
+ 
+
+/* Font and General Styles */
+
+body {
+
+  font-family: 'Roboto', sans-serif;
+
+  background-color: #f5f5f5;
+
+  color: #333;
+
+  padding: 20px;
+
+}
+
+ 
+
+h1 {
+
+  font-size: 24px;
+
+  color: #3f51b5;
+
+  margin-bottom: 20px;
+
+  text-align: center;
+
+}
+
+ 
+
+/* Options container */
+
+.options-container {
+
+  width: 600px;
+
+  text-align: center;
+
+  padding: 20px;
+
+  border-radius: 7px;
+
+  background-color: #fff;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  margin: 0 auto;
+
+}
+
+ 
+
+label {
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  color: #333;
+
+  display: block;
+
+  margin: 10px 0 5px;
+
+}
+
+ 
+
+/* Input fields */
+
+input[type="text"], select {
+
+  padding: 10px;
+
+  margin: 10px 0;
+
+  font-size: 14px;
+
+  border-radius: 5px;
+
+  border: 1px solid #ddd;
+
+  width: 100%;
+
+  max-width: 400px;
+
+}
+
+ 
+
+/* Buttons */
+
+button,
+
+#save {
+
+  background-color: #3f51b5;
+
+  color: white;
+
+  font-size: 14px;
+
+  padding: 10px 20px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  margin: 20px 0;
+
+  cursor: pointer;
+
+  transition: background-color 0.3s;
+
+}
+
+ 
+
+button:hover,
+
+#save:hover {
+
+  background-color: #303f9f;
+
+}
+
+ 
+
+button:active,
+
+#save:active {
+
+  background-color: #1a237e;
+
+}
+
+ 
+
+/* Dropdown Menu */
+
+.dropdown {
+
+  padding: 10px;
+
+  margin: 10px 0;
+
+  font-size: 14px;
+
+  border-radius: 5px;
+
+  border: 1px solid #ddd;
+
+  width: 100%;
+
+  max-width: 400px;
+
+}
+
+ 
+
+/* Responsive Design */
+
+@media (max-width: 500px) {
+
+  .options-container {
+
+    width: 100%;
+
+  }
+
+ 
+
+  h1 {
+
+    font-size: 20px;
+
+  }
+
+ 
+
+  button,
+
+  #save {
+
+    font-size: 12px;
+
+    padding: 8px 16px;
+
+  }
+
+}
