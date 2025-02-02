@@ -3,9 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let textDisplay = document.getElementById("textDisplay");
   let downloadButton = document.getElementById("downloadTextButton");
   let speakButton = document.getElementById("speakButton");
-
   let extractedText = "";
-
   if (button) {
     button.addEventListener("click", function () {
 
@@ -20,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
           {
             target: { tabId: currentTab.id },
             function: () => {
-              let textContent = document.body.innerText; // Extract text
-              chrome.runtime.sendMessage({ text: textContent }); // Send text to background.js
+              let textContent = document.body.innerText; 
+              chrome.runtime.sendMessage({ text: textContent }); 
             },
           },
           () => {
@@ -34,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
-
   // Listen for the extracted text from background.js
   chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.text) {
@@ -58,53 +55,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
   downloadButton.addEventListener("click", function () {
     if (extractedText) {
-      const { jsPDF } = window.jspdf;  // Access jsPDF
+      const { jsPDF } = window.jspdf; 
       const doc = new jsPDF();
-
-     let filename = prompt("Enter filename:", "Summarized_Notes");
-      const margin = 10; // Margin for text from the page edges
-      const pageHeight = doc.internal.pageSize.height; // Get page height
- 
-      // Split the extracted text into chunks that fit on the page
-      const wrappedText = doc.splitTextToSize(summary, 250); // Wrap text at 180px width
-      let currentY = margin; // Start at the top of the page
- 
-      // Loop through the wrapped text and add it to the document
+      let filename = prompt("Enter filename:", "Summarized_Notes");
+      const margin = 10; 
+      const pageHeight = doc.internal.pageSize.height; 
+      const wrappedText = doc.splitTextToSize(summary, 250); 
+      let currentY = margin; 
       wrappedText.forEach((line, index) => {
-        if (currentY + 10 > pageHeight - margin) {  // Check if we need to move to a new page
-          doc.addPage(); // Add a new page if text exceeds the page height
-          currentY = margin; // Reset the Y position for the new page
+        if (currentY + 10 > pageHeight - margin) {  
+          doc.addPage(); 
+          currentY = margin; 
         }
         if (line.startsWith("**") && line.endsWith("**") || line.startsWith("-**") && line.endsWith("**")) {
-          // Apply bold formatting for headings
           doc.setFont("times", "bold");
           doc.setFontSize(14);
-          line = line.replace(/\*\*/g, ""); // Remove ** markers
+          line = line.replace(/\*\*/g, "");
         } else {
-          // Regular text
           doc.setFont("times", "normal");
           doc.setFontSize(10);
         }
-        doc.text(line, margin, currentY); // Add the line of text
-        currentY += 10; // Move down for the next line of text
+        doc.text(line, margin, currentY); 
+        currentY += 10; 
       });
- 
-      // Save the generated PDF
       if(!filename){return};
-      filename += ".pdf"; // Ensure the file has a .pdf extension
+      filename += ".pdf"; 
       doc.save(filename);
      
     } else {
       alert("No text available to download.");
     }
   });
-
   speakButton.addEventListener("click", function () {
     if (!summary) {
       alert("No summary available to read aloud.");
       return;
     }
-   
     speakText(summary);
   });
  
@@ -112,15 +98,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const lang = await getLangRead();
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = lang;
-   
-    // Find a matching voice for the selected language
     const voices = speechSynthesis.getVoices();
     const selectedVoice = voices.find((voice) => voice.lang === lang);
- 
     if (selectedVoice) {
       utterance.voice = selectedVoice;
     }
- 
     speechSynthesis.speak(utterance);
   }
 })
@@ -184,7 +166,7 @@ async function getSummaryPref() {
       if (chrome.runtime.lastError) {
         reject(new Error("Error accessing chrome.storage"));
       } else {
-        resolve(result.summaryPref || "You are a helpful AI assistant"); // Return an empty string if not found
+        resolve(result.summaryPref || "You are a helpful AI assistant"); 
       }
     });
   });
@@ -195,7 +177,7 @@ async function getLangText() {
       if (chrome.runtime.lastError) {
         reject(new Error("Error accessing chrome.storage"));
       } else {
-        resolve(result.languageSelectText || "en-US"); // Return default language if not found
+        resolve(result.languageSelectText || "en-US"); 
       }
     });
   });
@@ -206,7 +188,7 @@ function getLangRead() {
       if (chrome.runtime.lastError) {
         reject(new Error("Error accessing chrome.storage"));
       } else {
-        resolve(result.languageSelectRead || "en-US"); // Correct key
+        resolve(result.languageSelectRead || "en-US"); 
       }
     });
   });
