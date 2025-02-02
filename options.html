@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SnapStudy Settings</title>
+    <link rel="stylesheet" href="options-style.css"> 
+</head>
+<body>
+  <div style="display: flex; justify-content: center; align-items: center;margin: 0;padding: 0;">
+    <img src="logo3.png" style="height: 130px; width: 750px;">
+</div>
+<br><br>
+    <!-- Summary preference setting -->
+    <label for="summaryPref">What format would you like your summary to be in? Give a detailed description:</label>
+    <input type="text" id="summaryPref" name="summaryPref" placeholder="Enter your preference">
+
+    <p class = "summary-examples">
+      Example preferences:
+      <br>
+      - "Explain this content to me as if I am in kindergarten"
+      <br>
+      - "Give me a summary in cornell notes format"
+      <br>
+      - "Paraphrase this in highly technical language"
+    </p>
+    <br><br>
+
+    <!-- Language selection for the text -->
+    <label for="languageSelectText">Choose Language for the Text:</label>
+    <select id="languageSelectText" class="dropdown">
+      <option value="English">English</option>
+      <option value="Spanish">Spanish</option>
+      <option value="French">French</option>
+      <option value="German">German</option>
+      <option value="Chinese">Chinese</option>
+      <option value="Hindi">Hindi</option>
+      <option value="Japanese">Japanese</option>
+      <option value="Gujarati">Gujarati</option>
+    </select>
+    <br><br>
+
+    <!-- Language selection for the voice assistant -->
+    <label for="languageSelectRead">Choose Language for the Voice Assistant (Ideally, choose the same for both):</label>
+    <select id="languageSelectRead" class="dropdown">
+      <option value="en-US">English</option>
+      <option value="es-ES">Spanish</option>
+      <option value="fr-FR">French</option>
+      <option value="de-DE">German</option>
+      <option value="zh-CN">Chinese</option>
+      <option value="hi-IN">Hindi</option>
+      <option value="ja-JP">Japanese</option>
+      <option value="bn-IN">Gujarati</option>
+    </select>
+    <br><br>
+
+    <button id="save">Save Settings</button>
+
+    <script src="options.js"></script>
+</body>
+</html>

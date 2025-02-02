@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Extractor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Font -->
+  <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+</head>
+<body>
+  <div class="popup-container">
+    <div style="display: flex; justify-content: center; align-items: center;margin: 0;padding: 0;">
+      <img src="logo3.png" style="height: 130px; width: 600px;">
+  </div>
+  <br>
+    <br>
+    <h2>NOTE: There is a options page for the extention, so consider putting in your prefrences before starting to personalize yout notes</h2>
+    <br>
+    <button id="readTextButton" class="btn">Extract Text</button>
+    <div id="textDisplay" class="text-display">
+      <p>Click "Extract Text" to get the summary!</p>
+    </div>
+    <button id="downloadTextButton" class="btn">Download as PDF</button>
+    <button id="speakButton" class="btn">Read Aloud</button>
+  </div>
+  <script src="jspdf.umd.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

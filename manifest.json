@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "SnapStudy",
+  "version": "1.0",
+  "description": "AI-based Chrome extension that generates notes in a snap.",
+  "permissions": [
+  "activeTab",
+  "scripting",
+  "storage", 
+  "alarms", 
+  "notifications", 
+  "background", 
+  "tabs", 
+  "scripting",
+  "storage",
+  "activeTab",
+  "scripting",
+  "notifications",
+  "storage",
+  "alarms",
+  "background",
+  "tabs"
+],
+"host_permissions": ["<all_urls>"],
+"options_page": "options.html",
+"background": {
+  "service_worker": "background.js"
+},
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "book2.png"
+  }
+}

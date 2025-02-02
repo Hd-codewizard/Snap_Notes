@@ -1,0 +1,107 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Font and General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffff;
+  color: #333;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  color: #3f51b5;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Options container */
+.options-container {
+  width: 610px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 7px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.summary-examples {
+    font-size: 14px;  /* Slightly smaller font size for examples */
+    color: #555;      /* Dark gray color for the text */
+    line-height: 1.6;  /* Increase line height for readability */
+    margin: auto;    /* Add some space above and below the paragraph */
+    padding: 10px;     /* Add padding around the content */
+    background-color: #f9f9f9;  /* Light background color for contrast */
+    border:4px solid #b695c7; /* A colored border to the left for emphasis */
+    font-family: 'Roboto', sans-serif; /* Ensure the same font as the rest of the page */
+    width: 100%;
+    max-width: 610px;
+  }
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin: 10px 0 5px;
+  text-align: center;
+}
+
+/* Input fields */
+input[type="text"], select,.dropdown {
+  padding: 10px;
+  margin: 10px auto;
+  font-size: 14px;
+  border-radius: 5px;
+  border:4px solid #b695c7;
+  width: 100%;
+  max-width: 610px;
+  display: block;
+}
+
+/* Buttons */
+button,
+#save {
+  background-color: #3f51b5;
+  color: white;
+  font-size: 14px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin: 20px auto;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: block;
+}
+
+button:hover,
+#save:hover {
+  background-color: #303f9f;
+}
+
+button:active,
+#save:active {
+  background-color: #1a237e;
+}
+/* Responsive Design */
+@media (max-width: 610px) {
+  .options-container {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  button,
+  #save {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+}
